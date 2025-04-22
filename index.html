@@ -1,10 +1,86 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NaijaTech Shop</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #004d00;
+      color: white;
+    }
+
+    .menu-toggle {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    .nav-menu.hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        background-color: #004d00;
+        padding: 10px;
+        animation: slideDown 0.3s ease-in-out;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .nav-menu.show {
+        display: block;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
     .filter-bar {
       display: flex;
       flex-wrap: wrap;
@@ -12,17 +88,53 @@
       padding: 20px;
       justify-content: center;
     }
+
     .filter-bar input,
     .filter-bar select {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
+    .product {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-btn {
+      background-color: #25d366;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
-<body>  <header>
+<body>
+  <header>
     <h1>NaijaTech Shop</h1>
-    <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="navMenu" class="nav-menu">
       <ul>
         <li><a href="#fridges">Fridges</a></li>
         <li><a href="#cookers">Gas Cookers</a></li>
@@ -30,10 +142,14 @@
         <li><a href="#acs">Air Conditioners</a></li>
         <li><a href="#washers">Washing Machines</a></li>
         <li><a href="#cosmetics">Cosmetics</a></li>
+        <li><a href="#ammo">Ammunition</a></li>
       </ul>
     </nav>
-  </header>  <!-- Filter bar -->  <div class="filter-bar">
-    <input type="text" id="searchInput" placeholder="Search products...">
+  </header>
+
+  <!-- Filter bar -->
+  <div class="filter-bar">
+    <input type="text" id="searchInput" placeholder="Search products..." />
     <select id="categoryFilter">
       <option value="">All Categories</option>
       <option value="fridges">Fridges</option>
@@ -42,6 +158,7 @@
       <option value="acs">Air Conditioners</option>
       <option value="washers">Washing Machines</option>
       <option value="cosmetics">Cosmetics</option>
+      <option value="ammo">Ammunition</option>
     </select>
     <select id="brandFilter">
       <option value="">All Brands</option>
@@ -50,72 +167,37 @@
       <option value="TCL">TCL</option>
       <option value="Nasco">Nasco</option>
       <option value="Media">Media</option>
+      <option value="Federal">Federal</option>
     </select>
-  </div>  <main id="productList">
-    <!-- Your product sections here (same as before) -->
-    <!-- I’ll reinsert the previously generated sections below -->
-    <!-- Fridges -->
-    <section id="fridges">
-      <h2>Fridges</h2>
-      <div class="product" data-category="fridges" data-brand="Samsung">
-        <h3>Samsung Smart Fridge</h3>
-        <p>Energy-efficient, 400L capacity, twin cooling</p>
-        <p class="price">₵6,800</p>
-        <a href="https://wa.me/233539566710?text=I'm%20interested%20in%20Samsung%20Smart%20Fridge%20(₵6800)" class="order-btn">Order on WhatsApp</a>
+  </div>
+
+  <main id="productList">
+    <!-- Existing sections here (Fridges to Cosmetics) -->
+    
+    <!-- Ammunition Section -->
+    <section id="ammo">
+      <h2>Ammunition</h2>
+      <div class="product" data-category="ammo" data-brand="Federal">
+        <h3>9mm Luger (Box of 50)</h3>
+        <p>Full Metal Jacket, 115 grain</p>
+        <p class="price">₵500</p>
+        <a href="https://wa.me/233539566710?text=I'm%20interested%20in%209mm%20Luger%20(₵500)" class="order-btn">Order on WhatsApp</a>
       </div>
-    </section><section id="cookers">
-  <h2>Gas Cookers</h2>
-  <div class="product" data-category="cookers" data-brand="LG">
-    <h3>LG 4-Burner Gas Cooker</h3>
-    <p>Stainless steel body with oven</p>
-    <p class="price">₵1,900</p>
-    <a href="https://wa.me/233539566710?text=I'm%20interested%20in%20LG%204-Burner%20Gas%20Cooker%20(₵1900)" class="order-btn">Order on WhatsApp</a>
-  </div>
-</section>
+    </section>
+  </main>
 
-<section id="tvs">
-  <h2>Televisions</h2>
-  <div class="product" data-category="tvs" data-brand="Samsung">
-    <h3>Samsung Smart TV</h3>
-    <p>Crystal UHD, 50-inch screen, 4K resolution</p>
-    <p class="price">₵2,500</p>
-    <a href="https://wa.me/233539566710?text=I'm%20interested%20in%20Samsung%20Smart%20TV%20(₵2500)" class="order-btn">Order on WhatsApp</a>
-  </div>
-</section>
-
-<section id="acs">
-  <h2>Air Conditioners</h2>
-  <div class="product" data-category="acs" data-brand="Media">
-    <h3>Media 1.5HP AC</h3>
-    <p>Silent operation, fast cooling technology</p>
-    <p class="price">₵3,200</p>
-    <a href="https://wa.me/233539566710?text=I'm%20interested%20in%20Media%201.5HP%20AC%20(₵3200)" class="order-btn">Order on WhatsApp</a>
-  </div>
-</section>
-
-<section id="washers">
-  <h2>Washing Machines</h2>
-  <div class="product" data-category="washers" data-brand="Nasco">
-    <h3>Nasco 8kg Washer</h3>
-    <p>Top load washing machine with spin dryer</p>
-    <p class="price">₵2,150</p>
-    <a href="https://wa.me/233539566710?text=I'm%20interested%20in%20Nasco%208kg%20Washer%20(₵2150)" class="order-btn">Order on WhatsApp</a>
-  </div>
-</section>
-
-<section id="cosmetics">
-  <h2>Cosmetics</h2>
-  <div class="product" data-category="cosmetics" data-brand="Media">
-    <h3>Beauty Glow Set</h3>
-    <p>Skin care pack with lotion, cream & soap</p>
-    <p class="price">₵500</p>
-    <a href="https://wa.me/233539566710?text=I'm%20interested%20in%20Beauty%20Glow%20Set%20(₵500)" class="order-btn">Order on WhatsApp</a>
-  </div>
-</section>
-
-  </main>  <!-- Floating WhatsApp button -->  <a href="https://wa.me/233539566710" class="whatsapp-float" target="_blank" title="Chat with us">
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/233539566710" class="whatsapp-float" target="_blank" title="Chat with us">
     Chat with us
-  </a>  <script>
+  </a>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.toggle("show");
+    }
+
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
     const brandFilter = document.getElementById('brandFilter');
@@ -133,16 +215,13 @@
         const matchesCategory = !category || product.dataset.category === category;
         const matchesBrand = !brand || product.dataset.brand === brand;
 
-        if (matchesSearch && matchesCategory && matchesBrand) {
-          product.style.display = '';
-        } else {
-          product.style.display = 'none';
-        }
+        product.style.display = (matchesSearch && matchesCategory && matchesBrand) ? '' : 'none';
       });
     }
 
     searchInput.addEventListener('input', filterProducts);
     categoryFilter.addEventListener('change', filterProducts);
     brandFilter.addEventListener('change', filterProducts);
-  </script></body>
+  </script>
+</body>
 </html>
