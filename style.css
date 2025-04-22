@@ -67,36 +67,6 @@ header .nav-menu ul li a:hover {
   border-radius: 5px;
 }
 
-/* Toggle Menu */
-.menu-toggle {
-  font-size: 1.8rem;
-  cursor: pointer;
-  display: none;
-}
-
-/* Navigation */
-.nav-menu {
-  display: flex;
-}
-
-.nav-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.nav-menu ul li a {
-  color: white;
-  padding: 10px 15px;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.nav-menu ul li a:hover {
-  background-color: #f1c40f;
-  border-radius: 5px;
-}
-
 /* Hero Section */
 .hero {
   background: url('hero-image.jpg') no-repeat center center/cover;
@@ -158,6 +128,7 @@ main {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  margin-top: 50px;
 }
 
 h2 {
@@ -179,10 +150,18 @@ section {
   width: 90%;
   max-width: 350px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .product:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -325,5 +304,17 @@ footer a:hover {
   .whatsapp-float {
     padding: 10px 15px;
     font-size: 0.9rem;
+  }
+}
+
+/* Animation for Products */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
