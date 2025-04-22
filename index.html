@@ -8,6 +8,8 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     header {
@@ -17,68 +19,59 @@
       padding: 20px;
       background-color: #004d00;
       color: white;
+      position: relative;
     }
 
-    .menu-toggle {
-      font-size: 30px;
+    h1 {
+      margin: 0;
+    }
+
+    .hamburger {
+      font-size: 2rem;
       cursor: pointer;
-      display: none;
+      z-index: 1001;
     }
 
-    nav ul {
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 75%;
+      max-width: 300px;
+      height: 100%;
+      background-color: #004d00;
+      padding: 60px 20px;
       display: flex;
-      list-style: none;
+      flex-direction: column;
       gap: 20px;
+      transition: right 0.3s ease;
+      z-index: 1000;
     }
 
-    nav ul li a {
+    .side-menu a {
       color: white;
       text-decoration: none;
-      transition: color 0.3s ease;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
 
-    nav ul li a:hover {
-      color: #ffcc00;
+    .side-menu.active {
+      right: 0;
     }
 
-    .nav-menu.hidden {
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
       display: none;
     }
 
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      nav ul {
-        flex-direction: column;
-        background-color: #004d00;
-        padding: 10px;
-        animation: slideDown 0.3s ease-in-out;
-      }
-
-      nav ul li {
-        margin: 10px 0;
-      }
-
-      .nav-menu {
-        display: none;
-      }
-
-      .nav-menu.show {
-        display: block;
-      }
-
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+    .menu-overlay.active {
+      display: block;
     }
 
     .filter-bar {
@@ -131,21 +124,23 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>NaijaTech Shop</h1>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav id="navMenu" class="nav-menu">
-      <ul>
-        <li><a href="#fridges">Fridges</a></li>
-        <li><a href="#cookers">Gas Cookers</a></li>
-        <li><a href="#tvs">Televisions</a></li>
-        <li><a href="#acs">Air Conditioners</a></li>
-        <li><a href="#washers">Washing Machines</a></li>
-        <li><a href="#cosmetics">Cosmetics</a></li>
-        <li><a href="#ammo">Ammunition</a></li>
-      </ul>
-    </nav>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
   </header>
+
+  <!-- Side Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <a href="#fridges">Fridges</a>
+    <a href="#cookers">Gas Cookers</a>
+    <a href="#tvs">Televisions</a>
+    <a href="#acs">Air Conditioners</a>
+    <a href="#washers">Washing Machines</a>
+    <a href="#cosmetics">Cosmetics</a>
+    <a href="#ammo">Ammunition</a>
+  </nav>
+  <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
 
   <!-- Filter bar -->
   <div class="filter-bar">
@@ -172,8 +167,6 @@
   </div>
 
   <main id="productList">
-    <!-- Existing sections here (Fridges to Cosmetics) -->
-    
     <!-- Ammunition Section -->
     <section id="ammo">
       <h2>Ammunition</h2>
@@ -191,11 +184,11 @@
     Chat with us
   </a>
 
-  <!-- Toggle Menu Script -->
+  <!-- Scripts -->
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.classList.toggle("show");
+      document.getElementById("sideMenu").classList.toggle("active");
+      document.getElementById("overlay").classList.toggle("active");
     }
 
     const searchInput = document.getElementById('searchInput');
