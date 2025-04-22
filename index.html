@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NaijaTech Shop</title>
+  <title>Electronic And More</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -126,7 +126,7 @@
 <body>
 
   <header>
-    <h1>NaijaTech Shop</h1>
+    <h1>Electronic And More</h1>
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
   </header>
 
@@ -138,7 +138,6 @@
     <a href="#acs">Air Conditioners</a>
     <a href="#washers">Washing Machines</a>
     <a href="#cosmetics">Cosmetics</a>
-    <a href="#ammo">Ammunition</a>
   </nav>
   <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
 
@@ -153,7 +152,6 @@
       <option value="acs">Air Conditioners</option>
       <option value="washers">Washing Machines</option>
       <option value="cosmetics">Cosmetics</option>
-      <option value="ammo">Ammunition</option>
     </select>
     <select id="brandFilter">
       <option value="">All Brands</option>
@@ -162,22 +160,31 @@
       <option value="TCL">TCL</option>
       <option value="Nasco">Nasco</option>
       <option value="Media">Media</option>
-      <option value="Federal">Federal</option>
     </select>
   </div>
 
   <main id="productList">
-    <!-- Ammunition Section -->
-    <section id="ammo">
-      <h2>Ammunition</h2>
-      <div class="product" data-category="ammo" data-brand="Federal">
-        <h3>9mm Luger (Box of 50)</h3>
-        <p>Full Metal Jacket, 115 grain</p>
-        <p class="price">₵500</p>
-        <a href="https://wa.me/233539566710?text=I'm%20interested%20in%209mm%20Luger%20(₵500)" class="order-btn">Order on WhatsApp</a>
-      </div>
-    </section>
-  </main>
+    <section class="featured-products">
+  <h2>Featured Products</h2>
+  
+  <div class="product">
+    <img src="product1.jpg" alt="Product 1">
+    <h3>Product Name 1</h3>
+    <p>Description of product 1. It’s a great product!</p>
+    <div class="price">$49.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  
+  <div class="product">
+    <img src="product2.jpg" alt="Product 2">
+    <h3>Product Name 2</h3>
+    <p>Description of product 2. It’s even better!</p>
+    <div class="price">$69.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  
+</section>
+ </main>
 
   <!-- Floating WhatsApp button -->
   <a href="https://wa.me/233539566710" class="whatsapp-float" target="_blank" title="Chat with us">
