@@ -52,12 +52,16 @@ header .container {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center; /* centers the logo horizontally */
+  padding: 10px 0;
 }
 
 .logo img {
-  height: 70px;
-  transition: transform 0.3s ease;
+  width: auto;
+  max-width: 100%;
+  height: 60px; /* or adjust as needed */
+  object-fit: contain;
+  display: block;
 }
 
 .logo img:hover {
