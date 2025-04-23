@@ -28,45 +28,6 @@ h1, h2, h3 {
   padding: 20px 0;
 }
 
-/* Header */
-header {
-  background-color: #00502d;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-header .nav-menu {
-  display: flex;
-}
-
-header .nav-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-header .nav-menu ul li a {
-  color: white;
-  padding: 10px 15px;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-header .nav-menu ul li a:hover {
-  background-color: #f1c40f;
-  border-radius: 5px;
-}
-
 /* Hero Section */
 .hero {
   background: url('hero-image.jpg') no-repeat center center/cover;
@@ -99,29 +60,6 @@ header .nav-menu ul li a:hover {
   background-color: #e67e22;
 }
 
-/* Filter Bar */
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 20px;
-  justify-content: center;
-  background-color: white;
-  border-bottom: 1px solid #ddd;
-}
-
-.filter-bar input,
-.filter-bar select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* Main Section */
-main {
-  padding: 40px 10px;
-}
-
 /* Featured Products Section */
 .featured-products {
   display: flex;
@@ -137,10 +75,6 @@ h2 {
   margin-bottom: 30px;
 }
 
-section {
-  margin-bottom: 50px;
-}
-
 .product {
   background-color: #ffffff;
   padding: 20px;
@@ -150,19 +84,12 @@ section {
   width: 90%;
   max-width: 350px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
 }
 
 .product img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 15px;
-}
-
-.product:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .product h3 {
@@ -199,122 +126,112 @@ section {
   background-color: #f39c12;
 }
 
-/* WhatsApp Floating Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: bold;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-}
-
-.whatsapp-float:hover {
-  background-color: #1ebd5a;
-}
-
-/* Footer */
-footer {
-  background-color: #0a4d3c;
-  color: white;
+/* CEO Section */
+.ceo-description {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  margin-top: 50px;
   text-align: center;
-  padding: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ceo-description h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.ceo-description p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* About Us Section */
+.about-us {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+.about-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-us p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* New Member Signup Section */
+.new-member {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.new-member h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.new-member p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.new-member form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.new-member input {
+  padding: 10px;
   font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-footer a {
-  color: #f39c12;
+.new-member button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #00502d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-footer a:hover {
-  text-decoration: underline;
+.new-member button:hover {
+  background-color: #f39c12;
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    position: absolute;
-    top: 65px;
-    left: -100%;
-    width: 100%;
-    background-color: #00502d;
-    transition: left 0.3s ease;
-    z-index: 1000;
-  }
-
-  .nav-menu.show {
-    left: 0;
-  }
-
-  .nav-menu ul {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .nav-menu ul li {
-    margin: 10px 0;
-  }
-
-  .hero {
-    padding: 80px 20px;
-  }
-
-  .hero h2 {
-    font-size: 2.5rem;
-  }
-
-  .product {
-    width: 80%;
-    max-width: 100%;
-  }
+/* Contact Details Section */
+.contact-details {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 10px;
 }
 
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .product h3 {
-    font-size: 1.2rem;
-  }
-
-  .price {
-    font-size: 1.1rem;
-  }
-
-  .order-btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  .whatsapp-float {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-  }
+.contact-details h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-/* Animation for Products */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.contact-details p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.contact-details strong {
+  color: #00502d;
 }
