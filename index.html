@@ -360,6 +360,14 @@
       document.body.classList.toggle('dark-mode');
     });
   </script>
-
+  <script>
+  const toggles = document.querySelectorAll('.category-toggle');
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const brandList = toggle.nextElementSibling;
+      brandList.style.display = brandList.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 </body>
 </html>
