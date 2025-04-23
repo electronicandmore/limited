@@ -266,6 +266,30 @@ nav a:hover {
 .order-btn:hover {
   background-color: #f39c12;
 }
+/* Full-screen slide-down menu */
+.menu {
+  position: fixed;
+  top: 60px; /* below navbar */
+  left: 0;
+  right: 0;
+  background-color: #004000;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Fix body when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Hide menu by default */
+.hidden {
+  display: none;
+}
 
 /* Section Titles */
 section h2 {
