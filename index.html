@@ -146,6 +146,7 @@
     <a href="#acs">Air Conditioners</a>
     <a href="#washers">Washing Machines</a>
     <a href="#cosmetics">Cosmetics</a>
+    <button id="theme-toggle">Toggle Mode</button>
   </nav>
   <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
 
@@ -268,5 +269,11 @@
     categoryFilter.addEventListener('change', filterProducts);
     brandFilter.addEventListener('change', filterProducts);
   </script>
+  <script>
+  const toggle = document.getElementById('theme-toggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
 </body>
 </html>
