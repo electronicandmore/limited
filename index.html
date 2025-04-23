@@ -126,11 +126,15 @@
 <body>
 
   <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="logo.png" alt="Your Logo">
+      </a>
+    </div>
     <h1>Electronic And More</h1>
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
   </header>
 
-  <!-- Side Menu -->
   <nav class="side-menu" id="sideMenu">
     <a href="#fridges">Fridges</a>
     <a href="#cookers">Gas Cookers</a>
@@ -138,10 +142,10 @@
     <a href="#acs">Air Conditioners</a>
     <a href="#washers">Washing Machines</a>
     <a href="#cosmetics">Cosmetics</a>
+    <button id="theme-toggle">Mode</button>
   </nav>
   <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
 
-  <!-- Filter bar -->
   <div class="filter-bar">
     <input type="text" id="searchInput" placeholder="Search products..." />
     <select id="categoryFilter">
@@ -159,62 +163,108 @@
       <option value="LG">LG</option>
       <option value="TCL">TCL</option>
       <option value="Nasco">Nasco</option>
-      <option value="Media">Media</option>
     </select>
   </div>
 
   <main id="productList">
-    <!-- Hero Section -->
     <section class="hero">
       <h2>Welcome to Our Store!</h2>
       <p>Your one-stop shop for quality products at unbeatable prices.</p>
       <a href="#" class="cta-btn">Shop Now</a>
     </section>
 
-    <!-- Featured Products Section -->
     <section class="featured-products">
       <h2>Featured Products</h2>
-      <!-- Product 1 -->
+
+      <!-- Fridges -->
       <div class="product" data-category="fridges" data-brand="Samsung">
-        <img src="product1.jpg" alt="Product 1">
+        <img src="fridge_samsung.jpg" alt="Samsung Fridge">
         <h3>Samsung Fridge</h3>
-        <p>Description of product 1. It’s a great fridge!</p>
+        <p>Top freezer refrigerator with smart cooling.</p>
         <div class="price">$499.99</div>
         <a href="#" class="order-btn">Order Now</a>
       </div>
-      <!-- Product 2 -->
+
+      <div class="product" data-category="fridges" data-brand="LG">
+        <img src="fridge_lg.jpg" alt="LG Fridge">
+        <h3>LG Fridge</h3>
+        <p>Energy-efficient double door fridge.</p>
+        <div class="price">$529.99</div>
+        <a href="#" class="order-btn">Order Now</a>
+      </div>
+
+      <!-- Televisions -->
+      <div class="product" data-category="tvs" data-brand="TCL">
+        <img src="tv_tcl.jpg" alt="TCL TV">
+        <h3>TCL 4K TV</h3>
+        <p>Ultra HD Smart Android TV.</p>
+        <div class="price">$299.99</div>
+        <a href="#" class="order-btn">Order Now</a>
+      </div>
+
       <div class="product" data-category="tvs" data-brand="LG">
-        <img src="product2.jpg" alt="Product 2">
-        <h3>LG Television</h3>
-        <p>Description of product 2. It’s a great TV!</p>
-        <div class="price">$799.99</div>
+        <img src="tv_lg.jpg" alt="LG TV">
+        <h3>LG OLED TV</h3>
+        <p>55-inch OLED with AI ThinQ.</p>
+        <div class="price">$999.99</div>
+        <a href="#" class="order-btn">Order Now</a>
+      </div>
+
+      <!-- Gas Cookers -->
+      <div class="product" data-category="cookers" data-brand="Nasco">
+        <img src="cooker_nasco.jpg" alt="Nasco Cooker">
+        <h3>Nasco Gas Cooker</h3>
+        <p>4-burner gas cooker with oven.</p>
+        <div class="price">$239.99</div>
+        <a href="#" class="order-btn">Order Now</a>
+      </div>
+
+      <!-- Air Conditioners -->
+      <div class="product" data-category="acs" data-brand="Samsung">
+        <img src="ac_samsung.jpg" alt="Samsung AC">
+        <h3>Samsung Split AC</h3>
+        <p>High performance inverter AC.</p>
+        <div class="price">$449.99</div>
+        <a href="#" class="order-btn">Order Now</a>
+      </div>
+
+      <!-- Washing Machines -->
+      <div class="product" data-category="washers" data-brand="LG">
+        <img src="washer_lg.jpg" alt="LG Washer">
+        <h3>LG Washing Machine</h3>
+        <p>8kg front load washer with smart diagnosis.</p>
+        <div class="price">$399.99</div>
+        <a href="#" class="order-btn">Order Now</a>
+      </div>
+
+      <!-- Cosmetics -->
+      <div class="product" data-category="cosmetics" data-brand="TCL">
+        <img src="cosmetic_tcl.jpg" alt="Cosmetic Set">
+        <h3>TCL Beauty Pack</h3>
+        <p>All-in-one face and skin care pack.</p>
+        <div class="price">$79.99</div>
         <a href="#" class="order-btn">Order Now</a>
       </div>
     </section>
 
-    <!-- CEO Description Section -->
     <section class="ceo-description">
       <h2>Message from Our CEO</h2>
-      <p>Welcome to our store! I am the CEO, and I am incredibly proud to offer a wide range of products that cater to your every need. Our team is committed to providing you with the best shopping experience, top-quality products, and excellent customer service. Thank you for choosing us!</p>
+      <p>Welcome to our store! I am the CEO, and I am incredibly proud to offer a wide range of products that cater to your every need...</p>
     </section>
 
-    <!-- About Us Section -->
     <section class="about-us">
       <h2>About Us</h2>
-      <p>We are a company dedicated to offering top-notch products for every occasion. Our goal is to provide customers with an easy and reliable shopping experience, ensuring that you always find exactly what you're looking for. We take pride in our commitment to quality and customer satisfaction.</p>
+      <p>We are a company dedicated to offering top-notch products for every occasion...</p>
     </section>
 
-    <!-- New Member Signup Section -->
     <section class="new-member">
       <h2>Join Us</h2>
-      <p>Become a member of our community to receive the latest updates, special offers, and more! Simply enter your email below:</p>
       <form action="#" method="POST">
         <input type="email" placeholder="Enter your email" required>
         <button type="submit">Sign Up</button>
       </form>
     </section>
 
-    <!-- Contact Details Section -->
     <section class="contact-details">
       <h2>Contact Us</h2>
       <p><strong>Address:</strong> Pokuase, Accra City, Ghana</p>
@@ -223,12 +273,8 @@
     </section>
   </main>
 
-  <!-- Floating WhatsApp button -->
-  <a href="https://wa.me/233539566710" class="whatsapp-float" target="_blank" title="Chat with us">
-    Chat with us
-  </a>
+  <a href="https://wa.me/233539566710" class="whatsapp-float" target="_blank" title="Chat with us">Chat with us</a>
 
-  <!-- Scripts -->
   <script>
     function toggleMenu() {
       document.getElementById("sideMenu").classList.toggle("active");
@@ -259,6 +305,11 @@
     searchInput.addEventListener('input', filterProducts);
     categoryFilter.addEventListener('change', filterProducts);
     brandFilter.addEventListener('change', filterProducts);
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
   </script>
+
 </body>
 </html>
