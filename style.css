@@ -50,7 +50,7 @@ header .container {
 }
 
 .logo img {
-  height: 30px;
+  height: 40px;
   width: auto;
   transition: transform 0.3s ease;
 }
