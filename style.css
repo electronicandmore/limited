@@ -3,232 +3,204 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  line-height: 1.6;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease;
 }
 
 h1, h2, h3 {
-  font-family: 'Segoe UI', sans-serif;
   color: #00502d;
+  margin-bottom: 10px;
 }
 
 /* Container */
 .container {
-  width: 80%;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
 }
-/* Header Section */
+
+/* Header */
 header {
   background-color: #ffffff;
   padding: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-header .logo img {
-  height: 50px;  /* Adjust based on your logo size */
+.logo img {
+  height: 50px;
   width: auto;
   transition: transform 0.3s ease;
 }
 
-header .logo img:hover {
-  transform: scale(1.1);  /* Slight hover effect for the logo */
+.logo img:hover {
+  transform: scale(1.1);
 }
 
-/* Navigation Styles */
+/* Navigation */
 nav {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav a {
   font-size: 1rem;
   color: #333;
-  text-transform: uppercase;
+  font-weight: 500;
   letter-spacing: 1px;
+  padding: 5px 10px;
 }
 
 nav a:hover {
-  color: #f39c12;  /* Hover effect for navigation links */
+  color: #f39c12;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
   background: url('hero-image.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;
-  padding: 100px 0;
+  padding: 100px 20px;
 }
 
 .hero h2 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
-.hero .cta-btn {
-  padding: 15px 25px;
+.cta-btn {
+  padding: 15px 30px;
   background-color: #f39c12;
   color: white;
-  font-size: 1.2rem;
-  border: none;
+  font-size: 1.1rem;
   border-radius: 5px;
+  border: none;
+  margin-top: 25px;
   transition: background-color 0.3s ease;
 }
 
-.hero .cta-btn:hover {
+.cta-btn:hover {
   background-color: #e67e22;
 }
 
-/* Featured Products Section */
-.featured-products {
+/* Products Section */
+.featured-products, .product-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
-  margin-top: 50px;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+  gap: 30px;
+  padding: 40px 0;
 }
 
 .product {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 20px;
-  margin: 15px auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 350px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.product:hover {
+  transform: translateY(-5px);
 }
 
 .product img {
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 15px;
 }
 
 .product h3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #e74c3c;
-  margin-bottom: 15px;
 }
 
 .product p {
   font-size: 1rem;
   color: #555;
-  margin-bottom: 15px;
 }
 
 .price {
-  font-size: 1.5rem;
-  color: #27ae60;
+  font-size: 1.4rem;
   font-weight: bold;
+  color: #27ae60;
   margin-top: 10px;
 }
 
 .order-btn {
   display: inline-block;
   background-color: #00502d;
-  color: white;
+  color: #fff;
   padding: 10px 20px;
-  font-size: 1.2rem;
-  margin-top: 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .order-btn:hover {
   background-color: #f39c12;
 }
 
-/* CEO Section */
-.ceo-description {
-  background-color: #ffffff;
-  padding: 40px 20px;
-  margin-top: 50px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.ceo-description h2 {
+/* Section Titles */
+section h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.ceo-description p {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-/* About Us Section */
-.about-us {
-  padding: 40px 20px;
+  margin-bottom: 25px;
   text-align: center;
-  background-color: #f9f9f9;
-  margin-top: 50px;
-  border-radius: 10px;
 }
 
-.about-us h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.about-us p {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-/* New Member Signup Section */
-.new-member {
-  background-color: #ffffff;
+/* CEO, About, Contact, New Member Sections */
+section {
   padding: 40px 20px;
-  text-align: center;
-  margin-top: 50px;
+  background-color: #fff;
+  margin: 30px 0;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.new-member h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+section p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.new-member p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 20px;
-}
-
+/* Signup Form */
 .new-member form {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .new-member input {
@@ -236,15 +208,17 @@ h2 {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  flex: 1;
+  min-width: 200px;
 }
 
 .new-member button {
   padding: 10px 20px;
-  font-size: 1rem;
   background-color: #00502d;
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -252,25 +226,36 @@ h2 {
   background-color: #f39c12;
 }
 
-/* Contact Details Section */
-.contact-details {
-  background-color: #ffffff;
-  padding: 40px 20px;
+/* Footer */
+footer {
+  background-color: #0a4d3c;
+  color: white;
+  padding: 20px 0;
   text-align: center;
-  margin-top: 50px;
-  border-radius: 10px;
 }
 
-.contact-details h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+footer a {
+  color: #f39c12;
 }
 
-.contact-details p {
-  font-size: 1.2rem;
-  color: #555;
-}
+/* Responsive */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.contact-details strong {
-  color: #00502d;
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .product {
+    max-width: 90%;
+  }
 }
