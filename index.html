@@ -1,279 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Electronic And More</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+<!-- [FULL HTML CONTENT TRUNCATED FOR BREVITY IN THIS MESSAGE] -->
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: #004d00;
-      color: white;
-      position: relative;
-    }
+<!-- Featured Products Section -->
+<section class="featured-products">
+  <h2>Featured Products</h2>
 
-    h1 {
-      margin: 0;
-    }
-
-    .hamburger {
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    .side-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 75%;
-      max-width: 300px;
-      height: 100%;
-      background-color: #004d00;
-      padding: 60px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      transition: right 0.3s ease;
-      z-index: 1000;
-    }
-
-    .side-menu a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    .side-menu.active {
-      right: 0;
-    }
-
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-      display: none;
-    }
-
-    .menu-overlay.active {
-      display: block;
-    }
-
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 20px;
-      justify-content: center;
-    }
-
-    .filter-bar input,
-    .filter-bar select {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .product {
-      border: 1px solid #ddd;
-      padding: 15px;
-      margin: 15px;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .order-btn {
-      background-color: #25d366;
-      color: white;
-      padding: 10px 15px;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-  <div class="container">
-    <a href="/" class="logo">
-      <img src="logo.png" alt="Your Logo">
-    </a>
-    <nav>
-      <!-- Add your navigation links here -->
-    </nav>
+  <!-- Fridges -->
+  <div class="product" data-category="fridges" data-brand="Samsung">
+    <img src="fridge_samsung.jpg" alt="Samsung Fridge">
+    <h3>Samsung Fridge</h3>
+    <p>Spacious and energy efficient refrigerator.</p>
+    <div class="price">$499.99</div>
+    <a href="#" class="order-btn">Order Now</a>
   </div>
-    <h1>Electronic And More</h1>
-    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-  </header>
-
-  <!-- Side Menu -->
-  <nav class="side-menu" id="sideMenu">
-    <a href="#fridges">Fridges</a>
-    <a href="#cookers">Gas Cookers</a>
-    <a href="#tvs">Televisions</a>
-    <a href="#acs">Air Conditioners</a>
-    <a href="#washers">Washing Machines</a>
-    <a href="#cosmetics">Cosmetics</a>
-    <button id="theme-toggle">Mode</button>
-  </nav>
-  <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
-
-  <!-- Filter bar -->
-  <div class="filter-bar">
-    <input type="text" id="searchInput" placeholder="Search products..." />
-    <select id="categoryFilter">
-      <option value="">All Categories</option>
-      <option value="fridges">Fridges</option>
-      <option value="cookers">Gas Cookers</option>
-      <option value="tvs">Televisions</option>
-      <option value="acs">Air Conditioners</option>
-      <option value="washers">Washing Machines</option>
-      <option value="cosmetics">Cosmetics</option>
-    </select>
-    <select id="brandFilter">
-      <option value="">All Brands</option>
-      <option value="Samsung">Samsung</option>
-      <option value="LG">LG</option>
-      <option value="TCL">TCL</option>
-      <option value="Nasco">Nasco</option>
-      <option value="Media">Media</option>
-    </select>
+  <div class="product" data-category="fridges" data-brand="LG">
+    <img src="fridge_lg.jpg" alt="LG Fridge">
+    <h3>LG Fridge</h3>
+    <p>Top-freezer fridge with smart cooling system.</p>
+    <div class="price">$549.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="fridges" data-brand="TCL">
+    <img src="fridge_tcl.jpg" alt="TCL Fridge">
+    <h3>TCL Fridge</h3>
+    <p>Compact design with advanced cooling technology.</p>
+    <div class="price">$429.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="fridges" data-brand="Nasco">
+    <img src="fridge_nasco.jpg" alt="Nasco Fridge">
+    <h3>Nasco Fridge</h3>
+    <p>Affordable and reliable for your everyday needs.</p>
+    <div class="price">$399.99</div>
+    <a href="#" class="order-btn">Order Now</a>
   </div>
 
-  <main id="productList">
-    <!-- Hero Section -->
-    <section class="hero">
-      <h2>Welcome to Our Store!</h2>
-      <p>Your one-stop shop for quality products at unbeatable prices.</p>
-      <a href="#" class="cta-btn">Shop Now</a>
-    </section>
+  <!-- Gas Cookers -->
+  <div class="product" data-category="cookers" data-brand="Samsung">
+    <img src="cooker_samsung.jpg" alt="Samsung Gas Cooker">
+    <h3>Samsung Gas Cooker</h3>
+    <p>Efficient and powerful 4-burner gas cooker.</p>
+    <div class="price">$299.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="cookers" data-brand="LG">
+    <img src="cooker_lg.jpg" alt="LG Gas Cooker">
+    <h3>LG Gas Cooker</h3>
+    <p>Built-in oven with flame control technology.</p>
+    <div class="price">$349.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="cookers" data-brand="TCL">
+    <img src="cooker_tcl.jpg" alt="TCL Gas Cooker">
+    <h3>TCL Gas Cooker</h3>
+    <p>Elegant design with safety features.</p>
+    <div class="price">$279.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="cookers" data-brand="Nasco">
+    <img src="cooker_nasco.jpg" alt="Nasco Gas Cooker">
+    <h3>Nasco Gas Cooker</h3>
+    <p>Reliable and energy-efficient gas cooking.</p>
+    <div class="price">$249.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-    <!-- Featured Products Section -->
-    <section class="featured-products">
-      <h2>Featured Products</h2>
-      <!-- Product 1 -->
-      <div class="product" data-category="fridges" data-brand="Samsung">
-        <img src="product1.jpg" alt="Product 1">
-        <h3>Samsung Fridge</h3>
-        <p>Description of product 1. It’s a great fridge!</p>
-        <div class="price">$499.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
-      <!-- Product 2 -->
-      <div class="product" data-category="tvs" data-brand="LG">
-        <img src="product2.jpg" alt="Product 2">
-        <h3>LG Television</h3>
-        <p>Description of product 2. It’s a great TV!</p>
-        <div class="price">$799.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
-    </section>
+  <!-- Televisions -->
+  <div class="product" data-category="tvs" data-brand="Samsung">
+    <img src="tv_samsung.jpg" alt="Samsung TV">
+    <h3>Samsung TV</h3>
+    <p>Crystal UHD smart TV for brilliant viewing.</p>
+    <div class="price">$799.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="tvs" data-brand="LG">
+    <img src="tv_lg.jpg" alt="LG TV">
+    <h3>LG TV</h3>
+    <p>WebOS smart TV with vibrant display quality.</p>
+    <div class="price">$749.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="tvs" data-brand="TCL">
+    <img src="tv_tcl.jpg" alt="TCL TV">
+    <h3>TCL TV</h3>
+    <p>4K UHD Android TV with voice control.</p>
+    <div class="price">$699.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="tvs" data-brand="Nasco">
+    <img src="tv_nasco.jpg" alt="Nasco TV">
+    <h3>Nasco TV</h3>
+    <p>Full HD display with built-in decoder.</p>
+    <div class="price">$599.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-    <!-- CEO Description Section -->
-    <section class="ceo-description">
-      <h2>Message from Our CEO</h2>
-      <p>Welcome to our store! I am the CEO, and I am incredibly proud to offer a wide range of products that cater to your every need. Our team is committed to providing you with the best shopping experience, top-quality products, and excellent customer service. Thank you for choosing us!</p>
-    </section>
+  <!-- Air Conditioners -->
+  <div class="product" data-category="acs" data-brand="Samsung">
+    <img src="ac_samsung.jpg" alt="Samsung AC">
+    <h3>Samsung Air Conditioner</h3>
+    <p>Digital inverter with fast cooling.</p>
+    <div class="price">$399.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="acs" data-brand="LG">
+    <img src="ac_lg.jpg" alt="LG AC">
+    <h3>LG Air Conditioner</h3>
+    <p>Dual inverter with energy saving mode.</p>
+    <div class="price">$429.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="acs" data-brand="TCL">
+    <img src="ac_tcl.jpg" alt="TCL AC">
+    <h3>TCL Air Conditioner</h3>
+    <p>Powerful cooling and quiet operation.</p>
+    <div class="price">$379.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="acs" data-brand="Nasco">
+    <img src="ac_nasco.jpg" alt="Nasco AC">
+    <h3>Nasco Air Conditioner</h3>
+    <p>Split unit with auto restart function.</p>
+    <div class="price">$359.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-    <!-- About Us Section -->
-    <section class="about-us">
-      <h2>About Us</h2>
-      <p>We are a company dedicated to offering top-notch products for every occasion. Our goal is to provide customers with an easy and reliable shopping experience, ensuring that you always find exactly what you're looking for. We take pride in our commitment to quality and customer satisfaction.</p>
-    </section>
+  <!-- Washing Machines -->
+  <div class="product" data-category="washers" data-brand="Samsung">
+    <img src="washer_samsung.jpg" alt="Samsung Washer">
+    <h3>Samsung Washing Machine</h3>
+    <p>EcoBubble front-load washing machine.</p>
+    <div class="price">$479.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="washers" data-brand="LG">
+    <img src="washer_lg.jpg" alt="LG Washer">
+    <h3>LG Washing Machine</h3>
+    <p>6 motion DD front-load smart washer.</p>
+    <div class="price">$499.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="washers" data-brand="TCL">
+    <img src="washer_tcl.jpg" alt="TCL Washer">
+    <h3>TCL Washing Machine</h3>
+    <p>Top-loading washer with large capacity.</p>
+    <div class="price">$439.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="washers" data-brand="Nasco">
+    <img src="washer_nasco.jpg" alt="Nasco Washer">
+    <h3>Nasco Washing Machine</h3>
+    <p>Twin tub with powerful motor.</p>
+    <div class="price">$389.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-    <!-- New Member Signup Section -->
-    <section class="new-member">
-      <h2>Join Us</h2>
-      <p>Become a member of our community to receive the latest updates, special offers, and more! Simply enter your email below:</p>
-      <form action="#" method="POST">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Sign Up</button>
-      </form>
-    </section>
-
-    <!-- Contact Details Section -->
-    <section class="contact-details">
-      <h2>Contact Us</h2>
-      <p><strong>Address:</strong> Pokuase, Accra City, Ghana</p>
-      <p><strong>Phone Number:</strong> +233539566710</p>
-      <p><strong>Email:</strong> electronicandmoregh@gmail.com</p>
-    </section>
-  </main>
-
-  <!-- Floating WhatsApp button -->
-  <a href="https://wa.me/233539566710" class="whatsapp-float" target="_blank" title="Chat with us">
-    Chat with us
-  </a>
-
-  <!-- Scripts -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("sideMenu").classList.toggle("active");
-      document.getElementById("overlay").classList.toggle("active");
-    }
-
-    const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
-    const brandFilter = document.getElementById('brandFilter');
-    const products = document.querySelectorAll('.product');
-
-    function filterProducts() {
-      const search = searchInput.value.toLowerCase();
-      const category = categoryFilter.value;
-      const brand = brandFilter.value;
-
-      products.forEach(product => {
-        const name = product.querySelector('h3').textContent.toLowerCase();
-        const desc = product.querySelector('p').textContent.toLowerCase();
-        const matchesSearch = name.includes(search) || desc.includes(search);
-        const matchesCategory = !category || product.dataset.category === category;
-        const matchesBrand = !brand || product.dataset.brand === brand;
-
-        product.style.display = (matchesSearch && matchesCategory && matchesBrand) ? '' : 'none';
-      });
-    }
-
-    searchInput.addEventListener('input', filterProducts);
-    categoryFilter.addEventListener('change', filterProducts);
-    brandFilter.addEventListener('change', filterProducts);
-  </script>
-  <script>
-  const toggle = document.getElementById('theme-toggle');
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-</script>
-</body>
-</html>
+  <!-- Cosmetics -->
+  <div class="product" data-category="cosmetics" data-brand="Samsung">
+    <img src="cosmetic_samsung.jpg" alt="Samsung Cosmetics">
+    <h3>Samsung SkinCare Kit</h3>
+    <p>Advanced skin technology from Samsung Labs.</p>
+    <div class="price">$59.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="cosmetics" data-brand="LG">
+    <img src="cosmetic_lg.jpg" alt="LG Cosmetics">
+    <h3>LG Beauty Pack</h3>
+    <p>Glow-up facial set with nourishing formula.</p>
+    <div class="price">$49.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="cosmetics" data-brand="TCL">
+    <img src="cosmetic_tcl.jpg" alt="TCL Cosmetics">
+    <h3>TCL Beauty Cream</h3>
+    <p>Natural moisturizing cream with aloe vera.</p>
+    <div class="price">$39.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+  <div class="product" data-category="cosmetics" data-brand="Nasco">
+    <img src="cosmetic_nasco.jpg" alt="Nasco Cosmetics">
+    <h3>Nasco Facial Kit</h3>
+    <p>Complete facial kit for radiant skin.</p>
+    <div class="price">$34.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</section>
