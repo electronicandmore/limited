@@ -69,7 +69,56 @@ header .container {
   font-size: 1.5rem;
   font-weight: bold;
 }
+/* Theme Transitions */
+body, header, footer, section, .product {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode section {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .product {
+  background-color: #252525;
+}
+
+body.dark-mode nav a {
+  color: #f1f1f1;
+}
+
+body.dark-mode nav a:hover {
+  color: #f39c12;
+}
+
+body.dark-mode .order-btn {
+  background-color: #f39c12;
+  color: #000;
+}
+
+body.dark-mode .order-btn:hover {
+  background-color: #e67e22;
+}
+
+body.dark-mode .cta-btn {
+  background-color: #f39c12;
+  color: #000;
+}
+
+body.dark-mode .cta-btn:hover {
+  background-color: #e67e22;
+}
+
+body.dark-mode footer a {
+  color: #f39c12;
+}
 /* Navigation */
 nav {
   display: flex;
