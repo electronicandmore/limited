@@ -27,6 +27,45 @@ h1, h2, h3 {
   margin: 0 auto;
   padding: 20px 0;
 }
+/* Header Section */
+header {
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  height: 50px;  /* Adjust based on your logo size */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+  transform: scale(1.1);  /* Slight hover effect for the logo */
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  font-size: 1rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: #f39c12;  /* Hover effect for navigation links */
+}
 
 /* Hero Section */
 .hero {
