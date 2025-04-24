@@ -102,6 +102,13 @@
 
     <a href="index.html" class="home-link">Back to Home</a>
   </footer>
+<script>
+  const brandToggleBtn = document.querySelector('.brand-toggle');
+  const brandList = document.querySelector('.brand-list');
 
+  brandToggleBtn.addEventListener('click', () => {
+    brandList.style.display = brandList.style.display === 'block' ? 'none' : 'block';
+  });
+</script>
 </body>
 </html>
