@@ -123,6 +123,41 @@ body.dark-mode .cta-btn:hover {
 body.dark-mode footer a {
   color: #f39c12;
 }
+.brand-filter {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.brand-filter h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #004d00;
+}
+
+.brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.brand-list li a {
+  background-color: #004d00;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.brand-list li a:hover {
+  background-color: #25d366;
+}
 /* Navigation */
 nav {
   display: flex;
