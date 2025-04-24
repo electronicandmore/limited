@@ -309,6 +309,13 @@
     document.getElementById('theme-toggle').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
+    <script>
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  const currentMode = document.body.classList.contains("dark-mode") ? "dark" : "light";
+  localStorage.setItem("theme", currentMode);
+}
+</script>
   </script>
 
 </body>
