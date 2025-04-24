@@ -111,6 +111,7 @@
     }
   </style>
 </head>
+  <link rel="stylesheet" href="style.css">
 <body>
 
   <header>
@@ -161,15 +162,17 @@
 
     brandToggleBtn.addEventListener('click', () => {
       brandList.style.display = brandList.style.display === 'block' ? 'none' : 'block';
-    });
- // On page load, apply the theme from local storage
-window.onload = function () {
-  const theme = localStorage.getItem("theme");
-  if (theme === "dark") {
-    document.body.classList.add("dark-mode");
-  }
-};
-  </script>
 
+  </script>
+<script>
+  window.onload = () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  };
+</script>
 </body>
 </html>
