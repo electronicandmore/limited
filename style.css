@@ -52,14 +52,14 @@ header .container {
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center; /* centers the logo horizontally */
+  justify-content: center;
   padding: 10px 0;
 }
 
 .logo img {
   width: auto;
   max-width: 100%;
-  height: 60px; /* or adjust as needed */
+  height: 60px;
   object-fit: contain;
   display: block;
 }
@@ -73,6 +73,7 @@ header .container {
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 /* Theme Transitions */
 body, header, footer, section, .product {
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -94,63 +95,76 @@ body.dark-mode .product {
   background-color: #252525;
 }
 
-body.dark-mode nav a {
+body.dark-mode nav a,
+body.dark-mode footer a {
   color: #f1f1f1;
 }
 
-body.dark-mode nav a:hover {
+body.dark-mode nav a:hover,
+body.dark-mode footer a:hover {
   color: #f39c12;
 }
 
-body.dark-mode .order-btn {
-  background-color: #f39c12;
-  color: #000;
-}
-
-body.dark-mode .order-btn:hover {
-  background-color: #e67e22;
-}
-
+body.dark-mode .order-btn,
 body.dark-mode .cta-btn {
   background-color: #f39c12;
   color: #000;
 }
 
+body.dark-mode .order-btn:hover,
 body.dark-mode .cta-btn:hover {
   background-color: #e67e22;
 }
 
-body.dark-mode footer a {
-  color: #f39c12;
-}
-.brand-filter {
+/* Brand Filter Section */
+.brand-toggle-section {
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   border-bottom: 1px solid #ddd;
   text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 800px;
 }
 
-.brand-filter h2 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: #004d00;
+.brand-toggle {
+  background-color: #004d00;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.brand-toggle:hover {
+  background-color: #25d366;
 }
 
 .brand-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand-list.show {
+  max-height: 300px;
 }
 
 .brand-list li a {
   background-color: #004d00;
-  color: #fff;
+  color: white;
   padding: 10px 15px;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
@@ -158,6 +172,7 @@ body.dark-mode footer a {
 .brand-list li a:hover {
   background-color: #25d366;
 }
+
 /* Navigation */
 nav {
   display: flex;
@@ -209,38 +224,7 @@ nav a:hover {
 .cta-btn:hover {
   background-color: #e67e22;
 }
-.category {
-  margin-bottom: 10px;
-}
 
-.category-toggle {
-  width: 100%;
-  background-color: #f1f1f1;
-  color: #333;
-  padding: 10px;
-  font-weight: bold;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-}
-
-.category-toggle:hover {
-  background-color: #ddd;
-}
-
-.brand-list {
-  list-style-type: none;
-  padding-left: 15px;
-  display: none;
-  background: #ffffff;
-  border-left: 1.5px solid #00502d;
-  margin: 0;
-}
-
-.brand-list li {
-  padding: 4px 0;
-  font-size: 0.95rem;
-}
 /* Products Section */
 .featured-products,
 .product-section {
@@ -301,54 +285,11 @@ nav a:hover {
 .order-btn:hover {
   background-color: #f39c12;
 }
-.brand-toggle-section {
-  padding: 20px;
-  background-color: #f7f7f7;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
 
-.brand-toggle {
-  background-color: #004d00;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.brand-toggle:hover {
-  background-color: #25d366;
-}
-
-.brand-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.brand-list li a {
-  background-color: #004d00;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.brand-list li a:hover {
-  background-color: #25d366;
-}
 /* Full-screen slide-down menu */
 .menu {
   position: fixed;
-  top: 60px; /* below navbar */
+  top: 60px;
   left: 0;
   right: 0;
   background-color: #004000;
@@ -360,12 +301,10 @@ nav a:hover {
   overflow-y: auto;
 }
 
-/* Fix body when menu is open */
 body.menu-open {
   overflow: hidden;
 }
 
-/* Hide menu by default */
 .hidden {
   display: none;
 }
@@ -435,6 +374,8 @@ footer {
 
 footer a {
   color: #f39c12;
+  display: block;
+  margin: 5px 0;
 }
 
 /* Responsive Design */
