@@ -121,6 +121,24 @@
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
+
+    /* Dark mode styles */
+    .dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    .dark-mode .product,
+    .dark-mode header,
+    .dark-mode .side-menu,
+    .dark-mode .filter-bar,
+    .dark-mode .ceo-description,
+    .dark-mode .about-us,
+    .dark-mode .new-member,
+    .dark-mode .contact-details {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
@@ -144,6 +162,7 @@
     <a href="cos.html">Cosmetics</a>
     <button id="theme-toggle">Mode</button>
   </nav>
+
   <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
 
   <div class="filter-bar">
@@ -171,106 +190,104 @@
       <h2>Welcome to Our Store!</h2>
       <p>Your one-stop shop for quality products at unbeatable prices.</p>
       <a href="#" class="cta-btn">Shop Now</a>
-    </section>
+    </section><section class="featured-products">
+  <h2>Featured Products</h2>
 
-    <section class="featured-products">
-      <h2>Featured Products</h2>
+  <!-- Fridges -->
+  <div class="product" data-category="fridges" data-brand="Samsung">
+    <img src="fridge_samsung.jpg" alt="Samsung Fridge">
+    <h3>Samsung Fridge</h3>
+    <p>Top freezer refrigerator with smart cooling.</p>
+    <div class="price">$499.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-      <!-- Fridges -->
-      <div class="product" data-category="fridges" data-brand="Samsung">
-        <img src="fridge_samsung.jpg" alt="Samsung Fridge">
-        <h3>Samsung Fridge</h3>
-        <p>Top freezer refrigerator with smart cooling.</p>
-        <div class="price">$499.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
+  <div class="product" data-category="fridges" data-brand="LG">
+    <img src="fridge_lg.jpg" alt="LG Fridge">
+    <h3>LG Fridge</h3>
+    <p>Energy-efficient double door fridge.</p>
+    <div class="price">$529.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-      <div class="product" data-category="fridges" data-brand="LG">
-        <img src="fridge_lg.jpg" alt="LG Fridge">
-        <h3>LG Fridge</h3>
-        <p>Energy-efficient double door fridge.</p>
-        <div class="price">$529.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
+  <!-- Televisions -->
+  <div class="product" data-category="tvs" data-brand="TCL">
+    <img src="tv_tcl.jpg" alt="TCL TV">
+    <h3>TCL 4K TV</h3>
+    <p>Ultra HD Smart Android TV.</p>
+    <div class="price">$299.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-      <!-- Televisions -->
-      <div class="product" data-category="tvs" data-brand="TCL">
-        <img src="tv_tcl.jpg" alt="TCL TV">
-        <h3>TCL 4K TV</h3>
-        <p>Ultra HD Smart Android TV.</p>
-        <div class="price">$299.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
+  <div class="product" data-category="tvs" data-brand="LG">
+    <img src="tv_lg.jpg" alt="LG TV">
+    <h3>LG OLED TV</h3>
+    <p>55-inch OLED with AI ThinQ.</p>
+    <div class="price">$999.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-      <div class="product" data-category="tvs" data-brand="LG">
-        <img src="tv_lg.jpg" alt="LG TV">
-        <h3>LG OLED TV</h3>
-        <p>55-inch OLED with AI ThinQ.</p>
-        <div class="price">$999.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
+  <!-- Gas Cookers -->
+  <div class="product" data-category="cookers" data-brand="Nasco">
+    <img src="cooker_nasco.jpg" alt="Nasco Cooker">
+    <h3>Nasco Gas Cooker</h3>
+    <p>4-burner gas cooker with oven.</p>
+    <div class="price">$239.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-      <!-- Gas Cookers -->
-      <div class="product" data-category="cookers" data-brand="Nasco">
-        <img src="cooker_nasco.jpg" alt="Nasco Cooker">
-        <h3>Nasco Gas Cooker</h3>
-        <p>4-burner gas cooker with oven.</p>
-        <div class="price">$239.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
+  <!-- Air Conditioners -->
+  <div class="product" data-category="acs" data-brand="Samsung">
+    <img src="ac_samsung.jpg" alt="Samsung AC">
+    <h3>Samsung Split AC</h3>
+    <p>High performance inverter AC.</p>
+    <div class="price">$449.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-      <!-- Air Conditioners -->
-      <div class="product" data-category="acs" data-brand="Samsung">
-        <img src="ac_samsung.jpg" alt="Samsung AC">
-        <h3>Samsung Split AC</h3>
-        <p>High performance inverter AC.</p>
-        <div class="price">$449.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
+  <!-- Washing Machines -->
+  <div class="product" data-category="washers" data-brand="LG">
+    <img src="washer_lg.jpg" alt="LG Washer">
+    <h3>LG Washing Machine</h3>
+    <p>8kg front load washer with smart diagnosis.</p>
+    <div class="price">$399.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
 
-      <!-- Washing Machines -->
-      <div class="product" data-category="washers" data-brand="LG">
-        <img src="washer_lg.jpg" alt="LG Washer">
-        <h3>LG Washing Machine</h3>
-        <p>8kg front load washer with smart diagnosis.</p>
-        <div class="price">$399.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
+  <!-- Cosmetics -->
+  <div class="product" data-category="cosmetics" data-brand="TCL">
+    <img src="cosmetic_tcl.jpg" alt="Cosmetic Set">
+    <h3>TCL Beauty Pack</h3>
+    <p>All-in-one face and skin care pack.</p>
+    <div class="price">$79.99</div>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</section>
 
-      <!-- Cosmetics -->
-      <div class="product" data-category="cosmetics" data-brand="TCL">
-        <img src="cosmetic_tcl.jpg" alt="Cosmetic Set">
-        <h3>TCL Beauty Pack</h3>
-        <p>All-in-one face and skin care pack.</p>
-        <div class="price">$79.99</div>
-        <a href="#" class="order-btn">Order Now</a>
-      </div>
-    </section>
+<section class="ceo-description">
+  <h2>Message from Our CEO</h2>
+  <p>Welcome to our store! I am the CEO, and I am incredibly proud to offer a wide range of products that cater to your every need...</p>
+</section>
 
-    <section class="ceo-description">
-      <h2>Message from Our CEO</h2>
-      <p>Welcome to our store! I am the CEO, and I am incredibly proud to offer a wide range of products that cater to your every need...</p>
-    </section>
+<section class="about-us">
+  <h2>About Us</h2>
+  <p>We are a company dedicated to offering top-notch products for every occasion...</p>
+</section>
 
-    <section class="about-us">
-      <h2>About Us</h2>
-      <p>We are a company dedicated to offering top-notch products for every occasion...</p>
-    </section>
+<section class="new-member">
+  <h2>Join Us</h2>
+  <form action="#" method="POST">
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Sign Up</button>
+  </form>
+</section>
 
-    <section class="new-member">
-      <h2>Join Us</h2>
-      <form action="#" method="POST">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Sign Up</button>
-      </form>
-    </section>
-
-    <section class="contact-details">
-      <h2>Contact Us</h2>
-      <p><strong>Address:</strong> Pokuase, Accra City, Ghana</p>
-      <p><strong>Phone Number:</strong> +233539566710</p>
-      <p><strong>Email:</strong> electronicandmoregh@gmail.com</p>
-    </section>
+<section class="contact-details">
+  <h2>Contact Us</h2>
+  <p><strong>Address:</strong> Pokuase, Accra City, Ghana</p>
+  <p><strong>Phone Number:</strong> +233539566710</p>
+  <p><strong>Email:</strong> electronicandmoregh@gmail.com</p>
+</section>
   </main>
 
   <a href="https://wa.me/233539566710" class="whatsapp-float" target="_blank" title="Chat with us">Chat with us</a>
@@ -281,6 +298,7 @@
       document.getElementById("overlay").classList.toggle("active");
     }
 
+    // Filtering logic
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
     const brandFilter = document.getElementById('brandFilter');
@@ -306,17 +324,22 @@
     categoryFilter.addEventListener('change', filterProducts);
     brandFilter.addEventListener('change', filterProducts);
 
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-    <script>
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-  const currentMode = document.body.classList.contains("dark-mode") ? "dark" : "light";
-  localStorage.setItem("theme", currentMode);
-}
-</script>
-  </script>
+    // Theme toggle and persistence
+    document.getElementById('theme-toggle').addEventListener('click', toggleDarkMode);
 
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const currentMode = document.body.classList.contains("dark-mode") ? "dark" : "light";
+      localStorage.setItem("theme", currentMode);
+    }
+
+    // On page load, apply saved theme
+    window.onload = () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
 </body>
 </html>
