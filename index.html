@@ -48,11 +48,15 @@
       z-index: 1000;
     }
 
-    .side-menu a {
+    .side-menu a,
+    .side-menu button {
       color: white;
       text-decoration: none;
       font-size: 1.2rem;
       font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
     .side-menu.active {
@@ -83,7 +87,8 @@
     }
 
     .filter-bar input,
-    .filter-bar select {
+    .filter-bar select,
+    .filter-bar button {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -108,6 +113,8 @@
       padding: 10px 15px;
       text-decoration: none;
       border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
     }
 
     .whatsapp-float {
@@ -120,9 +127,25 @@
       border-radius: 50px;
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    /* Dark mode styles */
+    .whatsapp-float:hover::after {
+      content: " Chat with us on WhatsApp!";
+      background-color: white;
+      color: #25d366;
+      padding: 5px 10px;
+      border-radius: 5px;
+      position: absolute;
+      right: 80px;
+      bottom: 20px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
     .dark-mode {
       background-color: #121212;
       color: #ffffff;
@@ -142,7 +165,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <div class="container">
       <a href="/" class="logo">
@@ -154,15 +176,14 @@
   </header>
 
   <nav class="side-menu" id="sideMenu">
-    <a href="fridges.html">Fridges</a>
-    <a href="gcs.html">Gas Cookers</a>
-    <a href="tvs.html">Televisions</a>
-    <a href="ac.html">Air Conditioners</a>
-    <a href="wms.html">Washing Machines</a>
-    <a href="cos.html">Cosmetics</a>
+    <a href="#">Fridges</a>
+    <a href="#">Gas Cookers</a>
+    <a href="#">Televisions</a>
+    <a href="#">Air Conditioners</a>
+    <a href="#">Washing Machines</a>
+    <a href="#">Cosmetics</a>
     <button id="theme-toggle">Mode</button>
   </nav>
-
   <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
 
   <div class="filter-bar">
@@ -183,6 +204,7 @@
       <option value="TCL">TCL</option>
       <option value="Nasco">Nasco</option>
     </select>
+    <button onclick="resetFilters()">Reset Filters</button>
   </div>
 
   <main id="productList">
@@ -290,7 +312,11 @@
 </section>
   </main>
 
-  <a href="https://wa.me/233539566710" class="whatsapp-float" target="_blank" title="Chat with us">Chat with us</a>
+  <a href="https://wa.me/233539566710" class="whatsapp-float" target="_blank" title="Chat with us" id="whatsappBtn">
+    Chat with us
+  </a>
+
+  <audio id="whatsappSound" src="click.mp3" preload="auto"></audio>
 
   <script>
     function toggleMenu() {
@@ -298,48 +324,60 @@
       document.getElementById("overlay").classList.toggle("active");
     }
 
-    // Filtering logic
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
     const brandFilter = document.getElementById('brandFilter');
     const products = document.querySelectorAll('.product');
 
     function filterProducts() {
-      const search = searchInput.value.toLowerCase();
-      const category = categoryFilter.value;
-      const brand = brandFilter.value;
+      const search = searchInput.value.toLowerCase().trim();
+      const category = categoryFilter.value.toLowerCase();
+      const brand = brandFilter.value.toLowerCase();
 
       products.forEach(product => {
         const name = product.querySelector('h3').textContent.toLowerCase();
         const desc = product.querySelector('p').textContent.toLowerCase();
-        const matchesSearch = name.includes(search) || desc.includes(search);
-        const matchesCategory = !category || product.dataset.category === category;
-        const matchesBrand = !brand || product.dataset.brand === brand;
+        const productCategory = product.dataset.category.toLowerCase();
+        const productBrand = product.dataset.brand.toLowerCase();
+
+        const matchesSearch = !search || name.includes(search) || desc.includes(search);
+        const matchesCategory = !category || productCategory === category;
+        const matchesBrand = !brand || productBrand === brand;
 
         product.style.display = (matchesSearch && matchesCategory && matchesBrand) ? '' : 'none';
       });
+    }
+
+    function resetFilters() {
+      searchInput.value = "";
+      categoryFilter.value = "";
+      brandFilter.value = "";
+      filterProducts();
     }
 
     searchInput.addEventListener('input', filterProducts);
     categoryFilter.addEventListener('change', filterProducts);
     brandFilter.addEventListener('change', filterProducts);
 
-    // Theme toggle and persistence
-    document.getElementById('theme-toggle').addEventListener('click', toggleDarkMode);
-
-    function toggleDarkMode() {
+    document.getElementById('theme-toggle').addEventListener('click', () => {
       document.body.classList.toggle("dark-mode");
-      const currentMode = document.body.classList.contains("dark-mode") ? "dark" : "light";
-      localStorage.setItem("theme", currentMode);
-    }
+      const current = document.body.classList.contains("dark-mode") ? "dark" : "light";
+      localStorage.setItem("theme", current);
+    });
 
-    // On page load, apply saved theme
     window.onload = () => {
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme === "dark") {
         document.body.classList.add("dark-mode");
       }
     };
+
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const whatsappSound = document.getElementById('whatsappSound');
+    whatsappBtn.addEventListener('mouseenter', () => {
+      whatsappSound.currentTime = 0;
+      whatsappSound.play();
+    });
   </script>
 </body>
 </html>
