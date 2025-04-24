@@ -73,7 +73,52 @@ header .container {
   font-size: 1.5rem;
   font-weight: bold;
 }
+/* Fullscreen menu styling */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00502d; /* Dark green background */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow-y: auto;
+}
 
+/* Section headings like "Fridges", "Gas Cookers", etc. */
+.menu h2 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  text-align: center;
+}
+
+/* Brand buttons */
+.menu button,
+.menu .brand-btn {
+  background-color: white;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.menu button:hover,
+.menu .brand-btn:hover {
+  background-color: #f0f0f0;
+}
 /* Theme Transitions */
 body, header, footer, section, .product {
   transition: background-color 0.3s ease, color 0.3s ease;
