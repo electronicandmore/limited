@@ -301,6 +301,50 @@ nav a:hover {
 .order-btn:hover {
   background-color: #f39c12;
 }
+.brand-toggle-section {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.brand-toggle {
+  background-color: #004d00;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.brand-toggle:hover {
+  background-color: #25d366;
+}
+
+.brand-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand-list li a {
+  background-color: #004d00;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.brand-list li a:hover {
+  background-color: #25d366;
+}
 /* Full-screen slide-down menu */
 .menu {
   position: fixed;
